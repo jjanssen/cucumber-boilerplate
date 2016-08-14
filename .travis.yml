@@ -9,6 +9,7 @@ node_js:
 branches:
   only:
     - master
+    - package-updates
 
 before_script: "(npm run-script selenium-server & npm run-script local-webserver) 2>&1 >/dev/null &"
 
