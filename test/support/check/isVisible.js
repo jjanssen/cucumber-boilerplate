@@ -11,6 +11,6 @@ module.exports = function (element, falseCase, done) {
             } else {
                 visible.should.equal(true, 'expected element "' + element + '" to be visible');
             }
-        })
-        .call(done);
+            done();
+        });
 };

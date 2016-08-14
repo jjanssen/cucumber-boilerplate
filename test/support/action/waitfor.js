@@ -1,6 +1,5 @@
-module.exports = function (elem, obsolete, ms, isWaitingOnSpecificState, falseState, state) {
-    var command = 'waitForExist',
-        done = arguments[arguments.length - 1];
+module.exports = function (elem, obsolete, ms, isWaitingOnSpecificState, falseState, state, done) {
+    var command = 'waitForExist';
 
     if (isWaitingOnSpecificState) {
         state = state.indexOf(' ') > -1 ? state.split(/\s/)[state.split(/\s/).length - 1] : state;
@@ -16,6 +15,6 @@ module.exports = function (elem, obsolete, ms, isWaitingOnSpecificState, falseSt
     falseState = (falseState) ? true : false;
 
     ms = parseInt(ms, 10) || 3000;
-    this.browser[command](elem, ms, falseState)
-        .call(done);
+    this.browser[command](elem, ms, falseState);
+    done();
 };

@@ -3,7 +3,6 @@ module.exports = function (elem, falseCase, done) {
 
     falseCase = (falseCase) ? true : false;
 
-    this.browser
-        .waitForVisible(elem, ms, falseCase)
-        .call(done);
+    this.browser.waitForVisible(elem, ms, falseCase);
+    done();
 };

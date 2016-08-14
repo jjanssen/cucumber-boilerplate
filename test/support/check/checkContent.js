@@ -20,6 +20,6 @@ module.exports = function (type, element, falseCase, origText, done) {
             } else {
                 origText.should.equal(text);
             }
-        })
-        .call(done);
+            done();
+        });
 };

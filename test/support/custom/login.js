@@ -12,6 +12,5 @@ module.exports = function (login, password, done) {
         .setValue(githubPage.loginInput, login)
         .setValue(githubPage.passwordInput, password)
         .click(githubPage.signIn2Button)
-        .pause(1000)
-        .call(done);
+        .pause(1000);
 };
